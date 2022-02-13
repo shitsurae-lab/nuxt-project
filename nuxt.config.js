@@ -35,5 +35,51 @@ export default {
   modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    extend(config, ctx) {
+      modules: {
+        rules:;
+        ;[
+          {
+            test: /\.scss$/,
+            use: [
+              {
+                loader: 'style-loader',
+              },
+              {
+                loader: 'css-loader',
+
+                options: {
+                  sourceMap: true,
+                },
+              },
+              {
+                loader: 'sass-loader',
+                options: {
+                  implementation: require('sass'),
+                },
+              },
+            ],
+          },
+          {
+            test: /\.pug$/,
+            oneOf: [
+              {
+                resourceQuery: /^\?vue/,
+                use: [
+                  'raw-loader',
+                  {
+                    loader: 'pug-plain-loader',
+                    options: {
+                      pretty: true,
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+        ]
+      }
+    },
+  },
 }
