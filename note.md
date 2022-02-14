@@ -29,3 +29,8 @@ rules: {
    'vue/multi-word-component-names': 'off'
 }
 ```
+
+## ルーティングの設定について
+
+`layouts/default.vue`には`<Nuxt />`の記述が必須。`pages/`配下のページの内容が`<Nuxt />`の箇所に置き換わる。
+参考) [【完全ガイド】ゼロからしっかり理解したい人向けの Nuxt.js 入門](https://reffect.co.jp/vue/nuxt-js-first-step)
