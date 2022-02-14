@@ -1,0 +1,7 @@
+@use 'global' as *;
+.container {
+  background: $color-primary;
+  h1 {
+    color: red;
+  }
+}

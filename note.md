@@ -33,4 +33,8 @@ rules: {
 ## ルーティングの設定について
 
 `layouts/default.vue`には`<Nuxt />`の記述が必須。`pages/`配下のページの内容が`<Nuxt />`の箇所に置き換わる。
-参考) [【完全ガイド】ゼロからしっかり理解したい人向けの Nuxt.js 入門](https://reffect.co.jp/vue/nuxt-js-first-step)
+参考)
+
+1.  [【完全ガイド】ゼロからしっかり理解したい人向けの Nuxt.js 入門](https://reffect.co.jp/vue/nuxt-js-first-step)
+
+- 2/15 [Next.js における画像最適化](https://zenn.dev/flat_ito/articles/38944280919eb3)

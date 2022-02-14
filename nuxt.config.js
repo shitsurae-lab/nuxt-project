@@ -1,21 +1,30 @@
+const title = process.env.npm_package_name
+const description = 'Webサイトのディスクリプション'
+const url = 'WebサイトのURL'
+const ogImage = `${url}/assets/image/ogp.jpg`
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nuxt-project',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'ja',
     },
+    title: title,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'description',
+      },
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: [{ src: '~/assets/scss/style.scss' }],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -29,57 +38,19 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    //画像圧縮 + webP変換①(https://zenn.dev/flat_ito/articles/38944280919eb3)
+    '@aceforth/nuxt-optimized-images',
   ],
-
+  //画像圧縮 + webP変換②
+  optimizedImages: {
+    optimizeImages: true,
+    optimizeImagesInDev: false, //開発モードでも最適化する方法
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    extend(config, ctx) {
-      modules: {
-        rules:;
-        ;[
-          {
-            test: /\.scss$/,
-            use: [
-              {
-                loader: 'style-loader',
-              },
-              {
-                loader: 'css-loader',
-
-                options: {
-                  sourceMap: true,
-                },
-              },
-              {
-                loader: 'sass-loader',
-                options: {
-                  implementation: require('sass'),
-                },
-              },
-            ],
-          },
-          {
-            test: /\.pug$/,
-            oneOf: [
-              {
-                resourceQuery: /^\?vue/,
-                use: [
-                  'raw-loader',
-                  {
-                    loader: 'pug-plain-loader',
-                    options: {
-                      pretty: true,
-                    },
-                  },
-                ],
-              },
-            ],
-          },
-        ]
-      }
-    },
+    extractCSS: true,
   },
 }

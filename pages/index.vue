@@ -5,20 +5,40 @@
         {{ `${title}` }}
       </h1>
       <P class="py-1 text-blue-600">{{ `${desc}` }}</P>
-      <button class="bg-blue-500 text-white font-normal py-2 py-4 rounded">
+      <button class="bg-blue-500 text-white font-normal px-2 py-1 rounded">
         Push Me!
       </button>
     </div>
-    <Navigation />
   </div>
 </template>
 
 <script>
-import Navigation from '../components/Navigation.vue'
-
 export default {
   name: 'IndexPage',
-  components: { Navigation },
+  meta: [
+    { hid: 'og:title', property: 'og:title', content: 'Title' },
+    {
+      hid: 'og:description',
+      property: 'og:description',
+      content: '@shitsuraeのブログ',
+    },
+    { hid: 'og:image', property: 'og:image', content: '' },
+    // Twitter Card
+    {
+      hid: 'twitter:card',
+      name: 'twitter:card',
+      content: 'summary_large_image',
+    },
+    { hid: 'twitter:site', name: 'twitter:site', content: '@shitsurae' },
+    { hid: 'twitter:title', name: 'twitter:title', content: 'Title' },
+    {
+      hid: 'twitter:description',
+      name: 'twitter:description',
+      content: '@shitsuraeのブログ',
+    },
+    // サムネイル指定
+    // { name: 'thumbnail', content: 'https://litely.net/og_image.png' }
+  ],
   data() {
     return {
       title: 'Hello, world!',
