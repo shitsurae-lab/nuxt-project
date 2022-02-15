@@ -74,4 +74,5 @@ export default {
       return pages
     },
   },
+  target: 'static',
 }
