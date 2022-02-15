@@ -50,3 +50,5 @@ rules: {
       <img :src="require('~/assets/images/cake-unsplash.jpg')" />
     </picture>
 ```
+
+- [【Nuxt.js】build と generate の違い](https://blog.mktia.com/diffrences-between-build-and-generate-in-nuxt/)
