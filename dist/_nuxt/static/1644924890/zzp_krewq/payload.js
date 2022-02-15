@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/zzp_krewq", (function(a){return {data:[{id:"zzp_krewq",createdAt:a,updatedAt:a,publishedAt:a,revisedAt:a,title:"Hello, Nuxt.js",body:"\u003Cp\u003EThis is Nuxt Blog\u003C\u002Fp\u003E"}],fetch:{},mutations:void 0}}("2022-02-15T07:54:17.791Z")));
