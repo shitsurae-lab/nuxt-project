@@ -3,6 +3,8 @@ const description = 'Webサイトのディスクリプション'
 const url = 'WebサイトのURL'
 const ogImage = `${url}/assets/image/ogp.jpg`
 
+import axios from 'axios'
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -44,7 +46,7 @@ export default {
   //画像圧縮 + webP変換②
   optimizedImages: {
     optimizeImages: true,
-    optimizeImagesInDev: false, //開発モードでも最適化する方法
+    optimizeImagesInDev: true, //開発モードでも最適化する際にはtrue,
   },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
@@ -52,5 +54,24 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     extractCSS: true,
+  },
+
+  //SSG(スタティックサイトジェネレート)のときのパスやファイルを指定(yarn run generate)
+  generate: {
+    async routes() {
+      const pages = await axios
+        .get('https://shitsurae104.microcms.io/api/v1/news?limit=100', {
+          headers: {
+            'X-MICROCMS-API-KEY': 'ec3af9e4779a494bbc2a9a054a35ad1dceae',
+          },
+        })
+        .then((res) =>
+          res.data.contents.map((content) => ({
+            route: `/${content.id}`,
+            payload: content,
+          }))
+        )
+      return pages
+    },
   },
 }
