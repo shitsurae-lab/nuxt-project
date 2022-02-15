@@ -3,7 +3,7 @@
     <h1>ここはAboutページです</h1>
     <picture>
       <source
-        :srcset="require('~/assets/images/cake-unsplash.jpg?webp')"
+        :srcset="require('~/assets/images/cake-unsplash.webp')"
         type="image/webp"
       />
       <img :src="require('~/assets/images/cake-unsplash.jpg')" />
