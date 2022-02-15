@@ -37,4 +37,16 @@ rules: {
 
 1.  [【完全ガイド】ゼロからしっかり理解したい人向けの Nuxt.js 入門](https://reffect.co.jp/vue/nuxt-js-first-step)
 
-- 2/15 [Next.js における画像最適化](https://zenn.dev/flat_ito/articles/38944280919eb3)
+- 2/15 [Nuxt.js における画像最適化](https://zenn.dev/flat_ito/articles/38944280919eb3)
+
+- 画像の webp 化はローカルではうまくいくが、nuxt でデプロイするとうまくいかないので、一旦 webP 記述を消す
+
+```webP
+    <picture>
+      <source
+        :srcset="require('~/assets/images/cake-unsplash.jpg?webp')"
+        type="image/webp"
+      />
+      <img :src="require('~/assets/images/cake-unsplash.jpg')" />
+    </picture>
+```
