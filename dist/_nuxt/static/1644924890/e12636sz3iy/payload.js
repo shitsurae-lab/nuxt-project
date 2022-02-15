@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/e12636sz3iy", (function(a){return {data:[{id:"e12636sz3iy",createdAt:a,updatedAt:a,publishedAt:a,revisedAt:a,title:"Hello, microCMS",body:"\u003Cp\u003EThis is microCMS text.\u003C\u002Fp\u003E"}],fetch:{},mutations:void 0}}("2022-02-10T07:59:32.911Z")));
