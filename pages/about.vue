@@ -1,13 +1,16 @@
 <template>
   <div>
-    <h1>ここはAboutページです</h1>
+    <h1>{{ `${headline}` }}</h1>
+    <img src="/images/cake-unsplash.jpeg" />
+    <!-- <img :src="require(`~/assets/images/${filename}.jpg`)" /> -->
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      filename: '@/assets/images/cake-unsplash.jpg',
+      headline: 'ここはAboutページです',
+      filename: 'sky-unsplash',
     }
   },
 }

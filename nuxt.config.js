@@ -46,7 +46,7 @@ export default {
   //画像圧縮 + webP変換②
   optimizedImages: {
     optimizeImages: true,
-    optimizeImagesInDev: true, //開発モードでも最適化する際にはtrue,
+    optimizeImagesInDev: false, //開発モードでも最適化する際にはtrue,
   },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
